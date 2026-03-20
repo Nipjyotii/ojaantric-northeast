@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ojaantric Jajabor NorthEast – Explore Northeast India Your Way</title>
+<meta name="description" content="Explore Northeast India with Ojaantric Jajabor NorthEast. Custom trips, car rentals, bike rentals, and homestays across the Seven Sisters. Based in Guwahati, Assam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   ROOT VARIABLES & RESET
+═══════════════════════════════════════════ */
+:root {
+  --green-deep: #1a3a2a;
+  --green-mid: #2d6a4f;
+  --green-bright: #52b788;
+  --green-light: #b7e4c7;
+  --blue-deep: #0a2342;
+  --blue-mid: #1e6091;
+  --blue-sky: #48cae4;
+  --gold: #e9c46a;
+  --gold-light: #f4d98e;
+  --cream: #faf7f2;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-light: #888;
+  --shadow-soft: 0 8px 40px rgba(0,0,0,0.12);
+  --shadow-hard: 0 20px 60px rgba(0,0,0,0.25);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+img { display: block; width: 100%; object-fit: cover; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; font-family: inherit; }
+
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════════ */
+.display { font-family: 'Playfair Display', serif; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 1.5rem;
+  background: transparent;
+  transition: all 0.4s ease;
+}
+nav.scrolled {
+  background: rgba(26, 58, 42, 0.97);
+  backdrop-filter: blur(20px);
+  padding: 0 1.5rem;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-icon {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--green-bright), var(--blue-sky));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.nav-logo-text { color: white; }
+.nav-logo-text strong {
+  display: block; font-family: 'Playfair Display', serif;
+  font-size: 1rem; line-height: 1.1;
+}
+.nav-logo-text span {
+  font-size: 0.65rem; opacity: 0.75; letter-spacing: 2px; text-transform: uppercase;
+}
+.nav-links {
+  display: flex; gap: 2rem; list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.88rem; font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600 !important;
+  display: flex; align-items: center; gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+
+.hamburger {
+  display: none;
+  flex-direction: column; gap: 5px; padding: 4px; background: none;
+}
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: white; border-radius: 2px;
+  transition: all 0.3s;
+}
+.mobile-menu {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--green-deep);
+  z-index: 999; padding: 5rem 2rem 2rem;
+  flex-direction: column; gap: 1.5rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: white; font-size: 1.3rem;
+  font-family: 'Playfair Display', serif;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.mobile-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: none; color: white; font-size: 1.8rem;
+}
+
+/* ═══════════════════════════════════════════
+   HERO SECTION
+═══════════════════════════════════════════ */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: 
+    linear-gradient(160deg, rgba(10,35,66,0.75) 0%, rgba(26,58,42,0.6) 50%, rgba(45,106,79,0.5) 100%),
+    url('https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=1600&q=80') center/cover no-repeat;
+  transform: scale(1.05);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.12); }
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at bottom, rgba(26,58,42,0.4) 0%, transparent 70%);
+}
+
+/* Slide images */
+.hero-slides { position: absolute; inset: 0; }
+.hero-slide {
+  position: absolute; inset: 0; opacity: 0;
+  transition: opacity 1.5s ease;
+  background-size: cover; background-position: center;
+}
+.hero-slide.active { opacity: 1; }
+.hero-slide:nth-child(1) {
+  background-image: linear-gradient(160deg, rgba(10,35,66,0.7) 0%, rgba(26,58,42,0.5) 100%),
+    url('https://images.unsplash.com/photo-1606298855672-3efb63017be8?w=1600&q=80');
+}
+.hero-slide:nth-child(2) {
+  background-image: linear-gradient(160deg, rgba(0,30,60,0.65) 0%, rgba(26,58,42,0.5) 100%),
+    url('https://images.unsplash.com/photo-1547136283-fba2a3a0e940?w=1600&q=80');
+}
+.hero-slide:nth-child(3) {
+  background-image: linear-gradient(160deg, rgba(26,58,42,0.65) 0%, rgba(0,30,60,0.5) 100%),
+    url('https://images.unsplash.com/photo-1601932929480-a77698a05f18?w=1600&q=80');
+}
+.hero-slide:nth-child(4) {
+  background-image: linear-gradient(160deg, rgba(45,106,79,0.6) 0%, rgba(10,35,66,0.6) 100%),
+    url('https://images.unsplash.com/photo-1620735692151-26a7e0748429?w=1600&q=80');
+}
+
+.hero-content {
+  position: relative; z-index: 5;
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  width: 100%;
+  padding-top: 5rem;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--gold-light);
+  padding: 0.45rem 1rem;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease forwards;
+}
+.hero-badge::before {
+  content: '✦'; font-size: 0.65rem;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 900; color: white;
+  line-height: 1.1; margin-bottom: 1.2rem;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+.hero-title .accent { color: var(--gold); font-style: italic; }
+
+.hero-sub {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 0.75rem;
+  animation: fadeUp 0.8s 0.35s ease both;
+  max-width: 540px;
+  font-weight: 300; letter-spacing: 0.3px;
+}
+.hero-services {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s 0.45s ease both;
+}
+.hero-service-tag {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.9);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+}
+
+.hero-btns {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  animation: fadeUp 0.8s 0.55s ease both;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--green-bright), var(--green-mid));
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 0.95rem; font-weight: 600;
+  box-shadow: 0 8px 30px rgba(82,183,136,0.4);
+  transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(82,183,136,0.5); }
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 0.95rem; font-weight: 600;
+  box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+  transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,211,102,0.5); }
+
+.hero-stats {
+  display: flex; gap: 2.5rem; margin-top: 4rem;
+  animation: fadeUp 0.8s 0.7s ease both;
+  flex-wrap: wrap;
+}
+.hero-stat { color: white; }
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.75rem; opacity: 0.7;
+  letter-spacing: 1px; text-transform: uppercase; margin-top: 3px;
+}
+
+.hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; text-align: center;
+}
+.scroll-dot {
+  width: 30px; height: 48px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+.scroll-dot::after {
+  content: '';
+  position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 8px;
+  background: white;
+  border-radius: 2px;
+  animation: scrollAnim 1.5s infinite;
+}
+@keyframes scrollAnim {
+  0% { opacity: 1; top: 6px; }
+  100% { opacity: 0; top: 28px; }
+}
+.scroll-label {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.65rem; letter-spacing: 2px;
+  text-transform: uppercase; margin-top: 6px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════
+   SECTIONS GENERAL
+═══════════════════════════════════════════ */
+section { padding: 5rem 1.5rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--green-mid); font-weight: 600;
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 0.75rem;
+}
+.section-label::before, .section-label::after {
+  content: ''; flex: 1; max-width: 40px; height: 1px;
+  background: var(--green-bright);
+}
+.section-label::before { display: none; }
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700; line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--green-deep);
+}
+.section-sub {
+  font-size: 1rem; color: var(--text-mid);
+  max-width: 520px; line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════
+   TRUST BAR
+═══════════════════════════════════════════ */
+.trust-bar {
+  background: var(--green-deep);
+  padding: 1.2rem 1.5rem;
+}
+.trust-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 3rem;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem; font-weight: 500;
+}
+.trust-item span:first-child { font-size: 1.1rem; }
+
+/* ═══════════════════════════════════════════
+   DESTINATIONS
+═══════════════════════════════════════════ */
+.destinations { background: var(--white); }
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.dest-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  height: 320px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  box-shadow: var(--shadow-soft);
+}
+.dest-card:hover { transform: translateY(-6px); }
+.dest-card:nth-child(1) { grid-column: span 2; }
+.dest-card:nth-child(4) { grid-column: span 2; }
+.dest-card-img {
+  position: absolute; inset: 0;
+  transition: transform 0.6s ease;
+}
+.dest-card:hover .dest-card-img { transform: scale(1.08); }
+.dest-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,35,66,0.85) 0%, rgba(0,0,0,0.1) 60%);
+}
+.dest-card-body {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1.5rem;
+}
+.dest-state-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--gold-light);
+  font-size: 0.65rem; letter-spacing: 2px;
+  text-transform: uppercase; padding: 3px 10px;
+  border-radius: 20px; margin-bottom: 0.5rem;
+}
+.dest-card-title {
+  color: white; font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; margin-bottom: 0.4rem;
+}
+.dest-card-desc {
+  color: rgba(255,255,255,0.75); font-size: 0.8rem;
+  margin-bottom: 0.8rem; line-height: 1.5;
+}
+.dest-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gold);
+  color: var(--green-deep);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.78rem; font-weight: 700;
+  transition: background 0.3s;
+}
+.dest-btn:hover { background: var(--gold-light); }
+
+/* Image URL mapping for destinations */
+.dest-assam .dest-card-img { background: url('https://images.unsplash.com/photo-1598449426314-8b02525e8733?w=800&q=80') center/cover; }
+.dest-meghalaya .dest-card-img { background: url('https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=800&q=80') center/cover; }
+.dest-arunachal .dest-card-img { background: url('https://images.unsplash.com/photo-1606298855672-3efb63017be8?w=800&q=80') center/cover; }
+.dest-nagaland .dest-card-img { background: url('https://images.unsplash.com/photo-1570654639102-bdd5d6954bab?w=800&q=80') center/cover; }
+.dest-manipur .dest-card-img { background: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80') center/cover; }
+.dest-mizoram .dest-card-img { background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80') center/cover; }
+.dest-tripura .dest-card-img { background: url('https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?w=800&q=80') center/cover; }
+
+/* ═══════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════ */
+.services { background: var(--cream); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem; margin-top: 3rem;
+}
+.service-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
+  border: 2px solid transparent;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--green-bright), var(--blue-sky));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); border-color: var(--green-light); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon {
+  width: 64px; height: 64px;
+  margin: 0 auto 1.2rem;
+  background: linear-gradient(135deg, rgba(82,183,136,0.15), rgba(72,202,228,0.15));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem;
+}
+.service-title {
+  font-size: 1rem; font-weight: 700;
+  color: var(--green-deep); margin-bottom: 0.5rem;
+}
+.service-desc {
+  font-size: 0.82rem; color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   PRICING
+═══════════════════════════════════════════ */
+.pricing {
+  background: var(--green-deep);
+  position: relative; overflow: hidden;
+}
+.pricing::before {
+  content: '';
+  position: absolute; top: -50%; right: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.pricing .section-label { color: var(--gold-light); }
+.pricing .section-label::after { background: var(--gold); }
+.pricing .section-title { color: white; }
+.pricing .section-sub { color: rgba(255,255,255,0.65); }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.price-card {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+  transition: all 0.35s;
+}
+.price-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+.price-card.featured {
+  background: linear-gradient(135deg, rgba(233,196,106,0.15), rgba(82,183,136,0.1));
+  border-color: var(--gold);
+}
+.price-card.featured::after {
+  content: 'POPULAR';
+  position: absolute; top: 14px; right: -18px;
+  background: var(--gold);
+  color: var(--green-deep);
+  font-size: 0.6rem; font-weight: 800; letter-spacing: 1.5px;
+  padding: 4px 28px;
+  transform: rotate(45deg);
+}
+.price-emoji { font-size: 2.5rem; margin-bottom: 1rem; }
+.price-name {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.75rem; letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 0.5rem;
+}
+.price-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem; font-weight: 900;
+  color: var(--gold); line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.price-amount sup { font-size: 1.2rem; vertical-align: top; margin-top: 0.5rem; }
+.price-per { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-bottom: 1.2rem; }
+.price-features { list-style: none; text-align: left; margin-bottom: 1.8rem; }
+.price-features li {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.82rem; padding: 0.4rem 0;
+  display: flex; gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.price-features li::before { content: '✓'; color: var(--green-bright); font-weight: 700; }
+.btn-price {
+  width: 100%;
+  background: linear-gradient(135deg, var(--green-bright), var(--blue-sky));
+  color: white; padding: 0.8rem;
+  border-radius: 30px; font-weight: 600; font-size: 0.9rem;
+  transition: all 0.3s;
+}
+.btn-price:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(82,183,136,0.4); }
+
+/* ═══════════════════════════════════════════
+   PACKAGES
+═══════════════════════════════════════════ */
+.packages { background: white; }
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem; margin-top: 3rem;
+}
+.pkg-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.35s;
+}
+.pkg-card:hover { transform: translateY(-6px); }
+.pkg-img {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+.pkg-img-bg {
+  height: 100%; width: 100%;
+  transition: transform 0.5s;
+  background-size: cover; background-position: center;
+}
+.pkg-card:hover .pkg-img-bg { transform: scale(1.08); }
+.pkg-duration-badge {
+  position: absolute; top: 1rem; left: 1rem;
+  background: var(--gold);
+  color: var(--green-deep);
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.pkg-body { padding: 1.5rem; }
+.pkg-title {
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--green-deep); margin-bottom: 0.6rem;
+}
+.pkg-highlights { margin-bottom: 1rem; }
+.pkg-highlight {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; color: var(--text-mid); padding: 0.2rem 0;
+}
+.pkg-highlight::before { content: '📍'; font-size: 0.7rem; }
+.pkg-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 1rem; border-top: 1px solid #f0f0f0;
+}
+.pkg-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; color: var(--green-mid); font-weight: 700;
+}
+.pkg-price small { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; color: var(--text-light); display: block; }
+.btn-enquire {
+  background: var(--green-deep);
+  color: white; padding: 0.6rem 1.3rem;
+  border-radius: 30px; font-size: 0.82rem;
+  font-weight: 600; transition: all 0.3s;
+}
+.btn-enquire:hover { background: var(--green-mid); transform: scale(1.03); }
+
+/* ═══════════════════════════════════════════
+   WHY CHOOSE US
+═══════════════════════════════════════════ */
+.why {
+  background: linear-gradient(135deg, var(--cream) 0%, rgba(183,228,199,0.2) 100%);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem; margin-top: 3rem;
+  align-items: center;
+}
+.why-visual {
+  position: relative; border-radius: var(--radius);
+  overflow: hidden; height: 460px;
+}
+.why-visual-img {
+  height: 100%; width: 100%;
+  background: url('https://images.unsplash.com/photo-1519922639192-e73293ca430e?w=800&q=80') center/cover;
+}
+.why-visual-badge {
+  position: absolute; bottom: 1.5rem; left: 1.5rem;
+  background: var(--green-deep);
+  color: white; padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-hard);
+}
+.why-badge-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1;
+}
+.why-badge-text { font-size: 0.75rem; opacity: 0.7; }
+.why-list { list-style: none; }
+.why-item {
+  display: flex; gap: 1.2rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.why-item:last-child { border-bottom: none; }
+.why-item-icon {
+  width: 52px; height: 52px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--green-bright), var(--blue-sky));
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 20px rgba(82,183,136,0.3);
+}
+.why-item-title { font-size: 1rem; font-weight: 700; color: var(--green-deep); margin-bottom: 0.3rem; }
+.why-item-desc { font-size: 0.83rem; color: var(--text-mid); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════
+   REVIEWS
+═══════════════════════════════════════════ */
+.reviews { background: var(--white); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.review-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s;
+}
+.review-card:hover { box-shadow: var(--shadow-soft); }
+.review-quote {
+  font-size: 4rem; line-height: 1;
+  color: var(--green-light);
+  font-family: 'Playfair Display', serif;
+  position: absolute; top: 1rem; right: 1.5rem;
+}
+.review-stars { color: #f4a261; font-size: 0.9rem; margin-bottom: 0.8rem; }
+.review-text {
+  font-size: 0.88rem; color: var(--text-mid);
+  line-height: 1.7; margin-bottom: 1.2rem;
+  font-style: italic;
+}
+.review-author {
+  display: flex; align-items: center; gap: 10px;
+}
+.review-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-mid), var(--blue-mid));
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 700; font-size: 1rem;
+  flex-shrink: 0;
+}
+.review-name { font-weight: 700; font-size: 0.88rem; color: var(--green-deep); }
+.review-location { font-size: 0.75rem; color: var(--text-light); }
+.review-trip { font-size: 0.72rem; color: var(--green-mid); font-weight: 600; margin-top: 1rem; }
+.review-trip::before { content: '✈ '; }
+
+/* ═══════════════════════════════════════════
+   GALLERY
+═══════════════════════════════════════════ */
+.gallery { background: var(--green-deep); padding: 5rem 1.5rem; }
+.gallery .section-title { color: white; }
+.gallery .section-label { color: var(--gold-light); }
+.gallery .section-label::after { background: var(--gold); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  gap: 0.8rem; margin-top: 3rem;
+}
+.gallery-item {
+  border-radius: var(--radius-sm);
+  overflow: hidden; position: relative;
+  cursor: pointer;
+}
+.gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gallery-item:nth-child(4) { grid-column: span 2; }
+.gallery-item:nth-child(7) { grid-column: span 2; }
+.gallery-img {
+  width: 100%; height: 100%;
+  background-size: cover; background-position: center;
+  transition: transform 0.5s;
+}
+.gallery-item:hover .gallery-img { transform: scale(1.1); }
+.gallery-item::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,35,66,0.5) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gallery-item:hover::after { opacity: 1; }
+.gi1 .gallery-img { background-image: url('https://images.unsplash.com/photo-1547136283-fba2a3a0e940?w=800&q=80'); }
+.gi2 .gallery-img { background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80'); }
+.gi3 .gallery-img { background-image: url('https://images.unsplash.com/photo-1598449426314-8b02525e8733?w=800&q=80'); }
+.gi4 .gallery-img { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'); }
+.gi5 .gallery-img { background-image: url('https://images.unsplash.com/photo-1606298855672-3efb63017be8?w=800&q=80'); }
+.gi6 .gallery-img { background-image: url('https://images.unsplash.com/photo-1620735692151-26a7e0748429?w=800&q=80'); }
+.gi7 .gallery-img { background-image: url('https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=800&q=80'); }
+.gi8 .gallery-img { background-image: url('https://images.unsplash.com/photo-1519922639192-e73293ca430e?w=800&q=80'); }
+
+/* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
+.contact { background: var(--cream); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem; margin-top: 3rem;
+  align-items: start;
+}
+.contact-info h3 {
+  font-size: 1.5rem; color: var(--green-deep); margin-bottom: 1.5rem;
+}
+.contact-item {
+  display: flex; gap: 1rem;
+  padding: 1.2rem;
+  background: white; border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  align-items: center;
+}
+.contact-item-icon {
+  width: 46px; height: 46px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--green-bright), var(--blue-sky));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.contact-item-label { font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+.contact-item-value { font-size: 0.95rem; font-weight: 600; color: var(--green-deep); }
+.social-links { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+.social-link {
+  width: 44px; height: 44px;
+  background: var(--green-deep);
+  color: white; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; transition: all 0.3s;
+}
+.social-link:hover { background: var(--green-mid); transform: translateY(-2px); }
+.contact-form {
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+}
+.contact-form h3 { font-size: 1.4rem; color: var(--green-deep); margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1.2rem; }
+.form-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-mid); margin-bottom: 0.4rem; }
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e8e8e8;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem; color: var(--text-dark);
+  outline: none; transition: border-color 0.3s;
+  background: var(--cream);
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--green-bright);
+  background: white;
+}
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn-submit {
+  width: 100%; padding: 1rem;
+  background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+  color: white; border-radius: var(--radius-sm);
+  font-size: 1rem; font-weight: 700;
+  letter-spacing: 0.5px; transition: all 0.3s;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(45,106,79,0.4); }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background: var(--green-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 1.5rem 2rem;
+}
+.footer-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem; margin-bottom: 3rem;
+}
+.footer-brand {}
+.footer-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; color: white; font-weight: 700; margin-bottom: 0.3rem;
+}
+.footer-tagline { font-size: 0.78rem; color: var(--green-bright); margin-bottom: 1rem; }
+.footer-about { font-size: 0.82rem; line-height: 1.7; margin-bottom: 1.5rem; }
+.footer-heading { color: white; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.2rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.6rem; }
+.footer-links a { font-size: 0.82rem; transition: color 0.3s; }
+.footer-links a:hover { color: var(--green-bright); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+  font-size: 0.78rem;
+}
+.footer-bottom a { color: var(--green-bright); }
+
+/* ═══════════════════════════════════════════
+   FLOATING WHATSAPP
+═══════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed; bottom: 2rem; right: 1.5rem;
+  z-index: 900;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;
+}
+.whatsapp-tooltip {
+  background: white;
+  color: var(--green-deep);
+  font-size: 0.8rem; font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  opacity: 0; transform: translateX(10px);
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1; transform: translateX(0);
+}
+.whatsapp-btn {
+  width: 58px; height: 58px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 25px rgba(37,211,102,0.5);
+  animation: waPulse 2s infinite;
+  cursor: pointer; transition: transform 0.3s;
+}
+.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-btn svg { width: 30px; height: 30px; fill: white; }
+@keyframes waPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL ANIMATIONS
+═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  section { padding: 3.5rem 1.2rem; }
+
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .dest-card:nth-child(1), .dest-card:nth-child(4) { grid-column: span 1; }
+  .dest-grid { grid-template-columns: 1fr; }
+
+  .why-grid { grid-template-columns: 1fr; }
+  .why-visual { height: 260px; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: span 2; }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(7) { grid-column: span 1; grid-row: span 1; }
+
+  .hero-stats { gap: 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .packages-grid { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+}
+
+@media (max-width: 480px) {
+  .hero-btns { flex-direction: column; }
+  .btn-primary, .btn-whatsapp { justify-content: center; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">🧭</div>
+      <div class="nav-logo-text">
+        <strong>Ojaantric Jajabor</strong>
+        <span>NorthEast</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20plan%20a%20trip%20to%20Northeast%20India." target="_blank" class="nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.524 5.854L0 24l6.336-1.504A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.661-.522-5.172-1.427L3.5 21.5l.95-3.228A9.95 9.95 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#destinations" onclick="toggleMenu()">Destinations</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#packages" onclick="toggleMenu()">Packages</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20plan%20a%20trip%20to%20Northeast%20India." target="_blank" style="color:#25d366;font-weight:700;">📱 Book on WhatsApp</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-slides">
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">4+ Years of Trusted Travel Experience</div>
+    <h1 class="hero-title display">
+      Explore the <span class="accent">Untouched Beauty</span><br>of Northeast India
+    </h1>
+    <p class="hero-sub">From Kaziranga's rhinos to Tawang's snow peaks — we craft journeys that feel like home.</p>
+    <div class="hero-services">
+      <span class="hero-service-tag">🗺️ Custom Trips</span>
+      <span class="hero-service-tag">🚗 Car Rentals</span>
+      <span class="hero-service-tag">🏍️ Bike Rentals</span>
+      <span class="hero-service-tag">🏡 Homestays</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#packages" class="btn-primary">
+        🧳 Plan Your Trip
+      </a>
+      <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20plan%20a%20trip%20to%20Northeast%20India.%20Please%20help%20me." target="_blank" class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.524 5.854L0 24l6.336-1.504A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.661-.522-5.172-1.427L3.5 21.5l.95-3.228A9.95 9.95 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Book Now on WhatsApp
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">4+</div>
+        <div class="hero-stat-label">Years Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-label">Sister States</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Happy Travelers</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Custom Plans</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-dot"></div>
+    <div class="scroll-label">Scroll</div>
+  </div>
+</section>
+
+<!-- ═══════════ TRUST BAR ═══════════ -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span>🏆</span><span>4+ Years Trusted</span></div>
+    <div class="trust-item"><span>📍</span><span>Based in Guwahati, Assam</span></div>
+    <div class="trust-item"><span>🗺️</span><span>All 7 Sister States</span></div>
+    <div class="trust-item"><span>💬</span><span>24/7 WhatsApp Support</span></div>
+    <div class="trust-item"><span>💰</span><span>Budget-Friendly Pricing</span></div>
+    <div class="trust-item"><span>🤝</span><span>100% Customized Plans</span></div>
+  </div>
+</div>
+
+<!-- ═══════════ DESTINATIONS ═══════════ -->
+<section class="destinations" id="destinations">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Seven Sister States</p>
+      <h2 class="section-title">Discover Northeast India</h2>
+      <p class="section-sub">From lush tea gardens to snow-capped monasteries — the Northeast is unlike anywhere else on Earth.</p>
+    </div>
+    <div class="dest-grid">
+
+      <div class="dest-card dest-assam reveal reveal-delay-1">
+        <div class="dest-card-img"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-state-tag">State 01</div>
+          <div class="dest-card-title">Assam</div>
+          <div class="dest-card-desc">Guwahati city, rolling tea gardens, Brahmaputra river cruises & Kaziranga National Park.</div>
+          <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20explore%20Assam.%20Please%20help%20me%20plan." target="_blank" class="dest-btn">Explore More →</a>
+        </div>
+      </div>
+
+      <div class="dest-card dest-meghalaya reveal reveal-delay-2">
+        <div class="dest-card-img"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-state-tag">State 02</div>
+          <div class="dest-card-title">Meghalaya</div>
+          <div class="dest-card-desc">Living root bridges, Cherrapunji waterfalls, Shillong & stunning limestone caves.</div>
+          <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20explore%20Meghalaya.%20Please%20help%20me%20plan." target="_blank" class="dest-btn">Explore More →</a>
+        </div>
+      </div>
+
+      <div class="dest-card dest-arunachal reveal reveal-delay-1">
+        <div class="dest-card-img"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-state-tag">State 03</div>
+          <div class="dest-card-title">Arunachal Pradesh</div>
+          <div class="dest-card-desc">Tawang monastery, Himalayan snow peaks & breathtaking high-altitude landscapes.</div>
+          <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20explore%20Arunachal%20Pradesh.%20Please%20help%20me%20plan." target="_blank" class="dest-btn">Explore More →</a>
+        </div>
+      </div>
+
+      <div class="dest-card dest-nagaland reveal reveal-delay-2">
+        <div class="dest-card-img"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-state-tag">State 04</div>
+          <div class="dest-card-title">Nagaland</div>
+          <div class="dest-card-desc">Hornbill Festival, ancient warrior culture & lush green tribal highlands.</div>
+          <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20explore%20Nagaland.%20Please%20help%20me%20plan." target="_blank" class="dest-btn">Explore More →</a>
+        </div>
+      </div>
+
+      <div class="dest-card dest-manipur reveal reveal-delay-3">
+        <div class="dest-card-img"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-state-tag">State 05</div>
+          <div class="dest-card-title">Manipur</div>
+          <div class="dest-card-desc">Loktak Lake floating islands, classical dance & scenic Imphal valley.</div>
+          <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20explore%20Manipur.%20Please%20help%20me%20plan." target="_blank" class="dest-btn">Explore More →</a>
+        </div>
+      </div>
+
+      <div class="dest-card dest-mizoram reveal reveal-delay-1">
+        <div class="dest-card-img"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-state-tag">State 06</div>
+          <div class="dest-card-title">Mizoram</div>
+          <div class="dest-card-desc">Serene hills, bamboo landscapes, peaceful Aizawl city & vibrant local culture.</div>
+          <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20explore%20Mizoram.%20Please%20help%20me%20plan." target="_blank" class="dest-btn">Explore More →</a>
+        </div>
+      </div>
+
+      <div class="dest-card dest-tripura reveal reveal-delay-2">
+        <div class="dest-card-img"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-state-tag">State 07</div>
+          <div class="dest-card-title">Tripura</div>
+          <div class="dest-card-desc">Ujjayanta Palace, Neermahal water palace & rich heritage along lush hills.</div>
+          <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20explore%20Tripura.%20Please%20help%20me%20plan." target="_blank" class="dest-btn">Explore More →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SERVICES ═══════════ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Our Travel Services</h2>
+      <p class="section-sub">Everything you need for a perfect Northeast adventure — tailored just for you.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🗺️</div>
+        <div class="service-title">Customized Tour Packages</div>
+        <div class="service-desc">Fully personalized itineraries built around your dates, budget, and dream destinations across the Northeast.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🚕</div>
+        <div class="service-title">Taxi Booking Services</div>
+        <div class="service-desc">Reliable, comfortable cab service across all major Northeast destinations with experienced local drivers.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🚗</div>
+        <div class="service-title">Self-Drive Car Rentals</div>
+        <div class="service-desc">Drive at your own pace with our well-maintained rental fleet — SUVs, hatchbacks & more from ₹1500/day.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🏍️</div>
+        <div class="service-title">Bike Rentals</div>
+        <div class="service-desc">Hit the mountain roads on a Bullet or adventure bike. Perfect for solo travelers & road trip enthusiasts from ₹500/day.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🏡</div>
+        <div class="service-title">Homestay Booking</div>
+        <div class="service-desc">Experience authentic Northeast hospitality at handpicked homestays — budget-friendly and full of local flavor.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PRICING ═══════════ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Transparent Pricing</p>
+      <h2 class="section-title">Simple, Honest Rates</h2>
+      <p class="section-sub">No hidden charges. What you see is what you pay — because travel should feel good from the start.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-emoji">🏍️</div>
+        <div class="price-name">Bike Rental</div>
+        <div class="price-amount"><sup>₹</sup>500</div>
+        <div class="price-per">per day onwards</div>
+        <ul class="price-features">
+          <li>Multiple bike options</li>
+          <li>Helmets included</li>
+          <li>City & highway use</li>
+          <li>Flexible rental duration</li>
+        </ul>
+        <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20enquire%20about%20bike%20rental." target="_blank"><button class="btn-price">Enquire Now</button></a>
+      </div>
+
+      <div class="price-card featured reveal reveal-delay-2">
+        <div class="price-emoji">🚗</div>
+        <div class="price-name">Car Rental</div>
+        <div class="price-amount"><sup>₹</sup>1500</div>
+        <div class="price-per">per day onwards</div>
+        <ul class="price-features">
+          <li>Self-drive or chauffeur</li>
+          <li>AC & non-AC options</li>
+          <li>Hatchback to SUV</li>
+          <li>GPS assistance</li>
+          <li>Flexible pickup points</li>
+        </ul>
+        <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20enquire%20about%20car%20rental." target="_blank"><button class="btn-price">Enquire Now</button></a>
+      </div>
+
+      <div class="price-card reveal reveal-delay-3">
+        <div class="price-emoji">🧳</div>
+        <div class="price-name">Tour Packages</div>
+        <div class="price-amount"><sup>₹</sup>5000</div>
+        <div class="price-per">per person onwards</div>
+        <ul class="price-features">
+          <li>Hotel + transport</li>
+          <li>Guided sightseeing</li>
+          <li>Homestay options</li>
+          <li>Group & solo packages</li>
+          <li>Fully customizable</li>
+        </ul>
+        <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20enquire%20about%20tour%20packages." target="_blank"><button class="btn-price">Enquire Now</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PACKAGES ═══════════ -->
+<section class="packages" id="packages">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Featured Packages</p>
+      <h2 class="section-title">Ready-Made Adventures</h2>
+      <p class="section-sub">Curated trips to the best Northeast destinations — or tell us your dream and we'll build it.</p>
+    </div>
+    <div class="packages-grid">
+
+      <div class="pkg-card reveal reveal-delay-1">
+        <div class="pkg-img">
+          <div class="pkg-img-bg" style="background-image: url('https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=700&q=80')"></div>
+          <div class="pkg-duration-badge">4–5 Days</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-title">Assam + Meghalaya Discovery</div>
+          <div class="pkg-highlights">
+            <div class="pkg-highlight">Guwahati → Shillong → Cherrapunji</div>
+            <div class="pkg-highlight">Kaziranga Wildlife & Tea Gardens</div>
+            <div class="pkg-highlight">Living Root Bridges & Waterfalls</div>
+            <div class="pkg-highlight">Brahmaputra River Cruise</div>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><small>Starting from</small>₹7,999/person</div>
+            <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20enquire%20about%20the%20Assam+Meghalaya%20package." target="_blank"><button class="btn-enquire">Enquire Now</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal reveal-delay-2">
+        <div class="pkg-img">
+          <div class="pkg-img-bg" style="background-image: url('https://images.unsplash.com/photo-1606298855672-3efb63017be8?w=700&q=80')"></div>
+          <div class="pkg-duration-badge">5–7 Days</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-title">Tawang Arunachal Expedition</div>
+          <div class="pkg-highlights">
+            <div class="pkg-highlight">Guwahati → Bhalukpong → Bomdila</div>
+            <div class="pkg-highlight">Tawang Monastery & War Memorial</div>
+            <div class="pkg-highlight">Sela Pass Snow & Alpine Lakes</div>
+            <div class="pkg-highlight">Himalayan Sunrise Views</div>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><small>Starting from</small>₹12,999/person</div>
+            <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20enquire%20about%20the%20Tawang%20Arunachal%20package." target="_blank"><button class="btn-enquire">Enquire Now</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal reveal-delay-3">
+        <div class="pkg-img">
+          <div class="pkg-img-bg" style="background-image: url('https://images.unsplash.com/photo-1547136283-fba2a3a0e940?w=700&q=80')"></div>
+          <div class="pkg-duration-badge">Custom</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-title">Custom Northeast Road Trip</div>
+          <div class="pkg-highlights">
+            <div class="pkg-highlight">You choose the states & duration</div>
+            <div class="pkg-highlight">Car or Bike rental included</div>
+            <div class="pkg-highlight">Homestays & hotels arranged</div>
+            <div class="pkg-highlight">Local guide support throughout</div>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><small>Starting from</small>₹5,000/person</div>
+            <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20plan%20a%20custom%20Northeast%20road%20trip." target="_blank"><button class="btn-enquire">Plan My Trip</button></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHY CHOOSE US ═══════════ -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-visual reveal">
+        <div class="why-visual-img"></div>
+        <div class="why-visual-badge">
+          <div class="why-badge-num">4+</div>
+          <div class="why-badge-text">Years of Travel Expertise</div>
+        </div>
+      </div>
+      <div>
+        <div class="reveal">
+          <p class="section-label">Why Choose Us</p>
+          <h2 class="section-title">Your Local Northeast Expert</h2>
+          <p class="section-sub" style="margin-bottom: 2rem;">We're not just a travel agency — we're Northeast enthusiasts who've lived these journeys and want to share them with you.</p>
+        </div>
+        <ul class="why-list">
+          <li class="why-item reveal reveal-delay-1">
+            <div class="why-item-icon">🏆</div>
+            <div>
+              <div class="why-item-title">4+ Years of Real Experience</div>
+              <div class="why-item-desc">We've been on the ground, explored every route, and know every shortcut — so your trip is smooth from day one.</div>
+            </div>
+          </li>
+          <li class="why-item reveal reveal-delay-2">
+            <div class="why-item-icon">🌿</div>
+            <div>
+              <div class="why-item-title">Local Northeast Experts</div>
+              <div class="why-item-desc">Based in Guwahati, we know the hidden gems, the best dhabas, and the roads less traveled.</div>
+            </div>
+          </li>
+          <li class="why-item reveal reveal-delay-3">
+            <div class="why-item-icon">💰</div>
+            <div>
+              <div class="why-item-title">Budget-Friendly, No Compromise</div>
+              <div class="why-item-desc">From backpacker to couple's retreat — we tailor every plan to your budget without cutting corners on experience.</div>
+            </div>
+          </li>
+          <li class="why-item reveal reveal-delay-4">
+            <div class="why-item-icon">🎯</div>
+            <div>
+              <div class="why-item-title">100% Customized Plans</div>
+              <div class="why-item-desc">No cookie-cutter packages. Every itinerary is built from scratch around your interests, pace, and travel style.</div>
+            </div>
+          </li>
+          <li class="why-item reveal">
+            <div class="why-item-icon">❤️</div>
+            <div>
+              <div class="why-item-title">Trusted by Real Travelers</div>
+              <div class="why-item-desc">Hundreds of happy travelers — solo adventurers, couples, families — have explored the Northeast with us.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ REVIEWS ═══════════ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Customer Stories</p>
+      <h2 class="section-title">What Travelers Say</h2>
+      <p class="section-sub">Real experiences, real smiles — from the people who trusted us with their dream trips.</p>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Absolute game-changer! Booked a last-minute Meghalaya trip and they sorted everything in hours. The homestay was cozy, the cab was reliable, and the route suggestions were perfect. Will travel again for sure!</div>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Rahul Sharma</div>
+            <div class="review-location">Delhi, India</div>
+          </div>
+        </div>
+        <div class="review-trip">Assam + Meghalaya · 5 Days</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Rented a bike from Ojaantric for a solo ride through Arunachal. The bike was in top condition, the route maps were helpful, and they kept checking in on me via WhatsApp. Truly personal service!</div>
+        <div class="review-author">
+          <div class="review-avatar" style="background: linear-gradient(135deg, #e76f51, #f4a261);">P</div>
+          <div>
+            <div class="review-name">Priya Nair</div>
+            <div class="review-location">Bengaluru, India</div>
+          </div>
+        </div>
+        <div class="review-trip">Arunachal Bike Trip · 7 Days</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Went with my partner for our anniversary — Tawang was magical. Everything was arranged beautifully, from the cozy guesthouse to the monastery visit. Ojaantric made it stress-free and unforgettable.</div>
+        <div class="review-author">
+          <div class="review-avatar" style="background: linear-gradient(135deg, #457b9d, #1d3557);">A</div>
+          <div>
+            <div class="review-name">Arun & Kavya</div>
+            <div class="review-location">Chennai, India</div>
+          </div>
+        </div>
+        <div class="review-trip">Tawang Honeymoon Trip · 6 Days</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Very budget-friendly and super responsive on WhatsApp. They customized our group trip for 8 people within budget. The local guides they arranged had amazing stories about Nagaland culture!</div>
+        <div class="review-author">
+          <div class="review-avatar" style="background: linear-gradient(135deg, #52b788, #2d6a4f);">S</div>
+          <div>
+            <div class="review-name">Sneha Gogoi</div>
+            <div class="review-location">Guwahati, Assam</div>
+          </div>
+        </div>
+        <div class="review-trip">Nagaland Group Trip · 4 Days</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Loved the Kaziranga safari package! The whole experience — from jeep booking to homestay — was perfectly arranged. These guys truly know Northeast India inside out. Highly recommend!</div>
+        <div class="review-author">
+          <div class="review-avatar" style="background: linear-gradient(135deg, #e9c46a, #f4a261);">M</div>
+          <div>
+            <div class="review-name">Mukul Das</div>
+            <div class="review-location">Kolkata, India</div>
+          </div>
+        </div>
+        <div class="review-trip">Kaziranga Safari Trip · 3 Days</div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">First solo trip and I was nervous — but they made it so easy. Clear communication, good cab drivers, safe homestays. I'm already planning my next Northeast trip with them!</div>
+        <div class="review-author">
+          <div class="review-avatar" style="background: linear-gradient(135deg, #e63946, #c1121f);">N</div>
+          <div>
+            <div class="review-name">Neha Borah</div>
+            <div class="review-location">Mumbai, India</div>
+          </div>
+        </div>
+        <div class="review-trip">Meghalaya Solo Trip · 4 Days</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GALLERY ═══════════ -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom: 0;">
+      <p class="section-label" style="justify-content:center;">Travel Moments</p>
+      <h2 class="section-title">Northeast Through Our Lens</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gi1 reveal"><div class="gallery-img"></div></div>
+      <div class="gallery-item gi2 reveal reveal-delay-1"><div class="gallery-img"></div></div>
+      <div class="gallery-item gi3 reveal reveal-delay-2"><div class="gallery-img"></div></div>
+      <div class="gallery-item gi4 reveal reveal-delay-1"><div class="gallery-img"></div></div>
+      <div class="gallery-item gi5 reveal reveal-delay-2"><div class="gallery-img"></div></div>
+      <div class="gallery-item gi6 reveal reveal-delay-3"><div class="gallery-img"></div></div>
+      <div class="gallery-item gi7 reveal reveal-delay-1"><div class="gallery-img"></div></div>
+      <div class="gallery-item gi8 reveal reveal-delay-2"><div class="gallery-img"></div></div>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;" class="reveal">
+      <a href="https://www.instagram.com/ojaantricjajabornortheast?igsh=a3JrdDBuY2tib3lm" target="_blank"
+         style="display:inline-flex; align-items:center; gap:10px; background: linear-gradient(135deg,#e1306c,#833ab4,#fd1d1d); color:white; padding:0.9rem 2rem; border-radius:50px; font-weight:700; font-size:0.95rem;">
+        📸 Follow us on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Plan Your Next Adventure</h2>
+      <p class="section-sub">Drop us a message or WhatsApp us directly — we usually respond within minutes!</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <h3>Contact Details</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">Guwahati, Assam, India</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📱</div>
+          <div>
+            <div class="contact-item-label">Phone / WhatsApp</div>
+            <div class="contact-item-value"><a href="tel:+916003410721" style="color:var(--green-mid)">+91 60034 10721</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div>
+            <div class="contact-item-label">Availability</div>
+            <div class="contact-item-value">Daily 8 AM – 10 PM</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📸</div>
+          <div>
+            <div class="contact-item-label">Instagram</div>
+            <div class="contact-item-value"><a href="https://www.instagram.com/ojaantricjajabornortheast?igsh=a3JrdDBuY2tib3lm" target="_blank" style="color:var(--green-mid)">@ojaantricjajabornortheast</a></div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://wa.me/916003410721" target="_blank" class="social-link" title="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.524 5.854L0 24l6.336-1.504A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.661-.522-5.172-1.427L3.5 21.5l.95-3.228A9.95 9.95 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ojaantricjajabornortheast?igsh=a3JrdDBuY2tib3lm" target="_blank" class="social-link" title="Instagram" style="background: linear-gradient(135deg,#e1306c,#833ab4);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="tel:+916003410721" class="social-link" title="Call" style="background: var(--blue-mid);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          </a>
+        </div>
+        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, var(--green-deep), var(--blue-deep)); border-radius: var(--radius); text-align: center;">
+          <p style="color: rgba(255,255,255,0.75); font-size: 0.85rem; margin-bottom: 0.8rem;">Fastest way to plan your trip</p>
+          <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20plan%20a%20trip%20to%20Northeast%20India.%20Please%20help%20me!" target="_blank"
+             style="display:inline-flex; align-items:center; gap:8px; background: linear-gradient(135deg, #25d366, #128c7e); color:white; padding:0.85rem 1.8rem; border-radius:50px; font-weight:700;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.524 5.854L0 24l6.336-1.504A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.661-.522-5.172-1.427L3.5 21.5l.95-3.228A9.95 9.95 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Chat on WhatsApp Now
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal reveal-delay-2">
+        <h3>Quick Trip Enquiry</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="Full name" id="fname">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone / WhatsApp</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" id="fphone">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Interested In</label>
+          <select class="form-select" id="finterest">
+            <option value="">Select a service...</option>
+            <option>Customized Tour Package</option>
+            <option>Car Rental</option>
+            <option>Bike Rental</option>
+            <option>Taxi Booking</option>
+            <option>Homestay Booking</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Destination</label>
+            <select class="form-select" id="fdest">
+              <option value="">Select state...</option>
+              <option>Assam</option>
+              <option>Meghalaya</option>
+              <option>Arunachal Pradesh</option>
+              <option>Nagaland</option>
+              <option>Manipur</option>
+              <option>Mizoram</option>
+              <option>Tripura</option>
+              <option>Multiple States</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">No. of Travelers</label>
+            <input type="number" class="form-input" placeholder="e.g. 2" min="1" id="ftravelers">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message / Dates</label>
+          <textarea class="form-textarea" placeholder="Tell us your travel dates, budget, or anything else..." id="fmessage"></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendWhatsApp()">
+          🚀 Send Enquiry via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-text">Ojaantric Jajabor NorthEast</div>
+      <div class="footer-tagline">Explore Northeast India Your Way</div>
+      <div class="footer-about">Based in Guwahati, Assam — we've been helping travelers discover the Seven Sister States for 4+ years. From budget backpackers to luxury seekers, we craft every trip with local expertise and genuine passion for the Northeast.</div>
+      <div style="display:flex; gap:0.8rem;">
+        <a href="https://wa.me/916003410721" target="_blank" style="background:rgba(255,255,255,0.1); color:white; padding:0.5rem 1rem; border-radius:20px; font-size:0.78rem; border:1px solid rgba(255,255,255,0.15);">WhatsApp</a>
+        <a href="https://www.instagram.com/ojaantricjajabornortheast" target="_blank" style="background:rgba(255,255,255,0.1); color:white; padding:0.5rem 1rem; border-radius:20px; font-size:0.78rem; border:1px solid rgba(255,255,255,0.15);">Instagram</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Destinations</div>
+      <ul class="footer-links">
+        <li><a href="#">Assam</a></li>
+        <li><a href="#">Meghalaya</a></li>
+        <li><a href="#">Arunachal Pradesh</a></li>
+        <li><a href="#">Nagaland</a></li>
+        <li><a href="#">Manipur</a></li>
+        <li><a href="#">Mizoram</a></li>
+        <li><a href="#">Tripura</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Services</div>
+      <ul class="footer-links">
+        <li><a href="#">Custom Packages</a></li>
+        <li><a href="#">Taxi Booking</a></li>
+        <li><a href="#">Car Rentals</a></li>
+        <li><a href="#">Bike Rentals</a></li>
+        <li><a href="#">Homestays</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Tour Packages</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Customer Reviews</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Ojaantric Jajabor NorthEast. All rights reserved. Based in Guwahati, Assam.</span>
+    <span>Made with ❤️ for Northeast India</span>
+  </div>
+</footer>
+
+<!-- ═══════════ FLOATING WHATSAPP ═══════════ -->
+<div class="whatsapp-float">
+  <div class="whatsapp-tooltip">Book on WhatsApp! 👋</div>
+  <a href="https://wa.me/916003410721?text=Hi!%20I%20want%20to%20plan%20a%20trip%20to%20Northeast%20India.%20Please%20help%20me!" target="_blank" class="whatsapp-btn">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.524 5.854L0 24l6.336-1.504A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.661-.522-5.172-1.427L3.5 21.5l.95-3.228A9.95 9.95 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+</div>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Hero slideshow
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+function nextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+setInterval(nextSlide, 5000);
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// WhatsApp form send
+function sendWhatsApp() {
+  const name = document.getElementById('fname').value || 'Not provided';
+  const phone = document.getElementById('fphone').value || 'Not provided';
+  const interest = document.getElementById('finterest').value || 'Not specified';
+  const dest = document.getElementById('fdest').value || 'Not specified';
+  const travelers = document.getElementById('ftravelers').value || 'Not specified';
+  const message = document.getElementById('fmessage').value || 'No additional message';
+  
+  const text = `Hi Ojaantric Jajabor NorthEast! 🙏\n\nI want to plan a trip.\n\n👤 Name: ${name}\n📱 Phone: ${phone}\n🎯 Service: ${interest}\n📍 Destination: ${dest}\n👥 Travelers: ${travelers}\n💬 Message: ${message}\n\nPlease help me plan!`;
+  
+  window.open(`https://wa.me/916003410721?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+// Smooth close on nav link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
